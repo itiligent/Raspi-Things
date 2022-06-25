@@ -62,13 +62,6 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 # Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
-sudo apt update && sudo apt install log2ram -y
-
-# Lets also install net-tools so it feels like Raspian 
-sudo apt install net-tools -y
-
-# Now upgrade everything 
-sudo apt update && sudo apt upgrade -y
 
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf
@@ -123,10 +116,15 @@ network:
 #              route-metric: 1000
 EOF
 
-
 # Generate and apply the chosen network config
 sudo netplan generate
 sudo netplan apply
+
+# Now upgrade everything 
+sudo apt update && sudo apt upgrade -y
+
+# Lets also install net-tools so it feels like Raspian 
+sudo apt update && sudo apt install net-tools log2ram -y
 		
 printf "+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram changes to take effect. 
