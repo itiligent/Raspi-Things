@@ -8,7 +8,8 @@
 
 #Run these first from the console before connection the new image online, else 
 # Ubuntu auto updates take over and you may not be able to run the script 
-# untill all updates are done.
+# until all updates are done, which can be ages.
+#
 # Before connection to internet:
 # 	sudo touch /etc/cloud/cloud-init.disabled
 # 	reboot, then
@@ -21,7 +22,6 @@ clear
 
 # Disbale cloud init coz its a pain
 sudo touch /etc/cloud/cloud-init.disabled
-sudo apt update & sudo apt upgrade -y
 
 #Enable zswap for some performance boost!
 sed -i s/$/' zswap.enabled=1'/ /boot/firmware/cmdline.txt
@@ -62,7 +62,7 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 # Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list 
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.frepo.gpg 
-sudo apt update 
+sudo apt update & sudo apt upgrade -y
 
 # Lets also install net-tools while we're at it - so it feels like Raspian 
 sudo apt install log2ram net-tools -y
