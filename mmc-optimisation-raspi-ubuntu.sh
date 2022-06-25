@@ -29,10 +29,10 @@ echo 'dtparam=audio=off' | sudo tee -a /boot/firmware/usercfg.txt
 
 # Disable Avahi to save memory - cloud init annoyingly installs this on first boot 
 # if you dont disable it before first connecting to the internet
-sudo systemctl stop avahi-daemon.service >/dev/null
-sudo systemctl disable avahi-daemon.service >/dev/null
 sudo systemctl stop avahi-daemon.socket >/dev/null
 sudo systemctl disable avahi-daemon.socket >/dev/null
+sudo systemctl stop avahi-daemon.service >/dev/null
+sudo systemctl disable avahi-daemon.service >/dev/null
 
 # Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
 echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf >/dev/null
