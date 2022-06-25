@@ -113,7 +113,7 @@ sudo netplan apply
 # sudo apt update && sudo apt upgrade -y
 
 # Lets also install net-tools so it feels like Raspian 
-sudo apt update && sudo install net-tools log2ram -y
+sudo apt update && sudo install log2ram -y
 
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf
