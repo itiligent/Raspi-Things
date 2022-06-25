@@ -5,6 +5,13 @@
 # David Harrop 
 # June 2022
 ###################################################################################
+
+#Run these first before connection the new image online, else Ubuntu auto updates
+# take over and you may not be able to run the script untill all updates are done.
+#  
+# systemctl stop apt-daily.timer
+# systemctl stop apt-daily-upgrade.timer
+
 clear
 
 # Disbale cloud init coz its a pain
