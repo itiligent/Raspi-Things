@@ -1,4 +1,4 @@
-Preserve MMC lifewith this optimised configuration for Raspi Ubuntu. Apply to a default UBUNTU Raspi install image - not for Raspian!! 
+Preserve MMC life with this optimised configuration for Raspi Ubuntu. Apply to a default UBUNTU Raspi install image - not for Raspian!! 
     
 Enhanments:
 zswap memory managment enabled |
