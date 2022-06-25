@@ -63,7 +63,8 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list 
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.frepo.gpg 
 sudo apt update 
-# Lets also install net-tools so it feels like Raspian 
+
+# Lets also install net-tools while we're at it - so it feels like Raspian 
 sudo apt install log2ram net-tools -y
 
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
