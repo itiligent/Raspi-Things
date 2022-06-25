@@ -1,7 +1,7 @@
 #!/bin/bash
 ###################################################################################
-# Build Ubuntu optimised for MMC cards - Extend MMC life on Raspi
-# For RASPIAN  (For USB/SSD optimised configs for Ubuntu, see separate scripts)
+# Build Ubuntu optimised for USB SSD 
+# For RASPIAN  
 # David Harrop 
 # June 2022
 ###################################################################################
@@ -32,10 +32,12 @@ echo 'dtparam=audio=off' | sudo tee -a /boot/firmware/usercfg.txt
 sudo systemctl stop avahi-daemon.socket >/dev/null
 sudo systemctl disable avahi-daemon.socket >/dev/null
 sudo systemctl stop avahi-daemon.service >/dev/null
-sudo systemctl disable avahi-daemon.service >/dev/null
+sudo systemctl disable avahi-daemon.service >/dev/nul
+sudo systemctl stop wpa_supplicant >/dev/null
+sudo systemctl disable wpa_supplicant >/dev/nulll
 
 # Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
-echo 'vm.swappiness=40' | sudo tee -a /etc/sysctl.conf >/dev/null
+echo 'vm.swappiness=30' | sudo tee -a /etc/sysctl.conf >/dev/null
 
 sleep 3
 echo 
@@ -54,14 +56,13 @@ sleep 3
 #echo 
 #echo -e "${YELLOW}Modifying partitions for MMC performance...${NC}"
 #echo
-# MMC Reduce Wear
 # For refernce, Ubuntu fpr raspi default fstab is:
 #LABEL=writable  /        ext4   defaults        0 1
 #LABEL=system-boot       /boot/firmware  vfat    defaults        0       1
 
 # Change fstab to support minimal disk timestamping and delay writes from RAM to every 30min, tweak if you like:
-#sudo sed -i 's/LABEL=writable/#LABEL=writable/g' /etc/fstab
-#echo -e 'LABEL=writable  /        ext4   noatime,errors=remount-ro,commit=1800,defaults        0 1' | sudo tee -a /etc/fstab >/dev/null
+sudo sed -i 's/LABEL=writable/#LABEL=writable/g' /etc/fstab
+echo -e 'LABEL=writable  /        ext4   noatime,errors=remount-ro,commit=60,defaults        0 1' | sudo tee -a /etc/fstab >/dev/null
 
 sleep 3
 echo 

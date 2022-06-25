@@ -33,8 +33,8 @@ sudo systemctl stop avahi-daemon.socket >/dev/null
 sudo systemctl disable avahi-daemon.socket >/dev/null
 sudo systemctl stop avahi-daemon.service >/dev/null
 sudo systemctl disable avahi-daemon.service >/dev/null
-systemctl stop wpa_supplicant >/dev/null
-systemctl disable wpa_supplicant >/dev/null
+sudo systemctl stop wpa_supplicant >/dev/null
+sudo systemctl disable wpa_supplicant >/dev/null
 
 # Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
 echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf >/dev/null
