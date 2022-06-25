@@ -6,17 +6,22 @@
 # June 2022
 ###################################################################################
 
-#Run these first before connection the new image online, else Ubuntu auto updates
-# take over and you may not be able to run the script untill all updates are done.
-#  
-# systemctl stop apt-daily.timer
-# systemctl stop apt-daily-upgrade.timer
+#Run these first from the console before connection the new image online, else 
+# Ubuntu auto updates take over and you may not be able to run the script 
+# untill all updates are done.
+# Before connection to internet:
+# 	sudo touch /etc/cloud/cloud-init.disabled
+# 	reboot, then
+#   systemctl stop apt-daily.timer
+# 	systemctl stop apt-daily-upgrade.timer
+# Now connect to internet
+# Download and run this script
 
 clear
 
 # Disbale cloud init coz its a pain
 sudo touch /etc/cloud/cloud-init.disabled
-sudo apt update & sudo apt upgrade
+sudo apt update & sudo apt upgrade -y
 
 #Enable zswap for some performance boost!
 sed -i s/$/' zswap.enabled=1'/ /boot/firmware/cmdline.txt
