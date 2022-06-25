@@ -27,9 +27,9 @@ sudo touch /etc/cloud/cloud-init.disabled
 sed -i s/$/' zswap.enabled=1'/ /boot/firmware/cmdline.txt
 
 #Disable hardware items in /boot/firmware/usercfg.txt so save power and resources
-	echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/firmware/usercfg.txt
-	echo 'dtoverlay=disable-bt' | sudo tee -a /boot/firmware/usercfg.txt
-	echo 'dtparam=audio=off' | sudo tee -a /boot/firmware/usercfg.txt
+echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/firmware/usercfg.txt
+echo 'dtoverlay=disable-bt' | sudo tee -a /boot/firmware/usercfg.txt
+echo 'dtparam=audio=off' | sudo tee -a /boot/firmware/usercfg.txt
 
 #Set time server
 sudo cat <<EOF | sudo tee /etc/systemd/timesyncd.conf
