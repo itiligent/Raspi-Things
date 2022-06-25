@@ -1,7 +1,7 @@
 #!/bin/bash
 ###################################################################################
 # Build Ubuntu optimised for MMC cards - Extend MMC life on Raspi
-# For Ubuntu 20.04.4 (For Ubuntu USB/SSD optimised configs, see separate scripts)
+# For Ubuntu 20.04.4 
 # David Harrop 
 # June 2022
 ###################################################################################
@@ -33,6 +33,8 @@ sudo systemctl stop avahi-daemon.socket >/dev/null
 sudo systemctl disable avahi-daemon.socket >/dev/null
 sudo systemctl stop avahi-daemon.service >/dev/null
 sudo systemctl disable avahi-daemon.service >/dev/null
+systemctl stop wpa_supplicant >/dev/null
+systemctl disable wpa_supplicant >/dev/null
 
 # Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
 echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf >/dev/null
