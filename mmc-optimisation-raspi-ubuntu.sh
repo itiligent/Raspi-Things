@@ -6,20 +6,12 @@
 # June 2022
 ###################################################################################
 
-#Run these first from the console before connection the new image online, else 
-# Ubuntu auto updates take over and you may not be able to run the script 
-# until all updates are done, which can be ages.
-#
-# Before connection to internet:
-# 	sudo touch /etc/cloud/cloud-init.disabled
-# 	reboot, then
-#   systemctl stop apt-daily.timer
-# 	systemctl stop apt-daily-upgrade.timer
-# Now connect to internet
-# Download and run this script
-
 clear
 
+sleep 3
+echo 
+echo -e "Disabling a few defults..."
+echo
 # Disbale cloud init coz its a pain
 sudo touch /etc/cloud/cloud-init.disabled
 
@@ -31,6 +23,21 @@ echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/firmware/usercfg.txt
 echo 'dtoverlay=disable-bt' | sudo tee -a /boot/firmware/usercfg.txt
 echo 'dtparam=audio=off' | sudo tee -a /boot/firmware/usercfg.txt
 
+# Disable Avahi to save memory - cloud init annoyingly installs this on first boot 
+# if you dont disable it before first connecting to the internet
+sudo systemctl stop avahi-daemon.service
+sudo systemctl disable avahi-daemon.service
+sudo systemctl stop avahi-daemon.socket
+sudo systemctl disable avahi-daemon.socket
+
+# Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
+echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+
+
+sleep 3
+echo 
+echo -e "Setting up timesync..."
+echo
 #Set time server
 sudo cat <<EOF | sudo tee /etc/systemd/timesyncd.conf
 [Time]
@@ -40,13 +47,10 @@ PollIntervalMinSec=32
 PollIntervalMaxSec=2048
 EOF
 
-# Disable Avahi to save memory - cloud init annoyingly installs this on first boot 
-# if you dont disable it before first connecting to the internet
-sudo systemctl stop avahi-daemon.service
-sudo systemctl disable avahi-daemon.service
-sudo systemctl stop avahi-daemon.socket
-sudo systemctl disable avahi-daemon.socket
-
+sleep 3
+echo 
+echo -e "Modifying partitions for MMC performance..."
+echo
 # MMC Reduce Wear
 # For refernce, Ubuntu fpr raspi default fstab is:
 #LABEL=writable  /        ext4   defaults        0 1
@@ -56,13 +60,10 @@ sudo systemctl disable avahi-daemon.socket
 sudo sed -i 's/LABEL=writable/#LABEL=writable/g' /etc/fstab
 echo -e 'LABEL=writable  /        ext4   noatime,errors=remount-ro,commit=1800,defaults        0 1' | sudo tee -a /etc/fstab
 
-# Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
-echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
-
-# Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
-echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
-sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
-
+sleep 3
+echo 
+echo -e "Setting up network..."
+echo
 ## Uncomment the network config required, you can only choose one, or build your own
 ## Be super careful and dont mix tabs with spaces. Indents are critical. 
 ## A space in the wrong place = hell!
@@ -104,23 +105,21 @@ network:
 #            dhcp4-overrides:
 #              route-metric: 1000
 EOF
-
 # Generate and apply the chosen network config
 sudo netplan generate
 sudo netplan apply
 
-sleep 15
+sleep 3
+echo 
 echo -e "getting ready to install log2ram..."
-
-# Now upgrade everything 
-# sudo apt update && sudo apt upgrade -y
-
-# Lets also install net-tools so it feels like Raspian 
+echo
+# Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
+echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
+sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 sudo apt update 
-sudo install net-tools -y
-sudo install log2ram -y
-sleep 15
-
+# Lets also install net-tools so it feels like Raspian 
+sudo apt install net-tools -y
+sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf
 SIZE=256M
@@ -131,8 +130,6 @@ ZL2R=false
 COMP_ALG=lz4
 LOG_DISK_SIZE=400M
 EOF
-
-
 		
 printf "+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram changes to take effect. 
