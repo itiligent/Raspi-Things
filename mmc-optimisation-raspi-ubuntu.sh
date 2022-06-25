@@ -14,7 +14,7 @@ NC='\033[0m' # No Color
 
 sleep 3
 echo 
-echo -e "${YELLOW}Disabling a few defaults...${NC}"
+echo -e "${YELLOW}Disabling a few defaults to speed things up...${NC}"
 echo
 # Disbale cloud init coz its a pain
 sudo touch /etc/cloud/cloud-init.disabled
@@ -126,13 +126,13 @@ sudo apt install net-tools -y
 sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf
-SIZE=256M
+SIZE=192M
 MAIL=true
 #PATH_DISK="/var/log";"/opt/gvm/var/log"
 PATH_DISK="/var/log"
 ZL2R=false
 COMP_ALG=lz4
-LOG_DISK_SIZE=400M
+LOG_DISK_SIZE=300M
 EOF
 		
 printf "${RED}+---------------------------------------------------------------------------------------------------------------------------
