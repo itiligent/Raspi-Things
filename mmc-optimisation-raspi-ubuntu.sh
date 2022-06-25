@@ -125,13 +125,13 @@ sudo apt install net-tools -y
 sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
-SIZE=256M
+SIZE=192M
 MAIL=true
 #PATH_DISK="/var/log";"/opt/gvm/var/log"
 PATH_DISK="/var/log"
 ZL2R=false
 COMP_ALG=lz4
-LOG_DISK_SIZE=200M
+LOG_DISK_SIZE=300M
 EOF
 		
 printf "${RED}+---------------------------------------------------------------------------------------------------------------------------
