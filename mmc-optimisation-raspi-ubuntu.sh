@@ -63,17 +63,6 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 
-cp /etc/log2ram.conf /etc/log2ram.conf.bak
-sudo cat <<EOF | sudo tee /etc/log2ram.conf
-SIZE=256M
-MAIL=true
-#PATH_DISK="/var/log";"/opt/gvm/var/log"
-PATH_DISK="/var/log"
-ZL2R=false
-COMP_ALG=lz4
-LOG_DISK_SIZE=400M
-EOF
-
 ## Uncomment the network config required, you can only choose one, or build your own
 ## Be super careful and dont mix tabs with spaces. Indents are critical. 
 ## A space in the wrong place = hell!
@@ -125,6 +114,19 @@ sudo netplan apply
 
 # Lets also install net-tools so it feels like Raspian 
 sudo apt update && sudo install net-tools log2ram -y
+
+cp /etc/log2ram.conf /etc/log2ram.conf.bak
+sudo cat <<EOF | sudo tee /etc/log2ram.conf
+SIZE=256M
+MAIL=true
+#PATH_DISK="/var/log";"/opt/gvm/var/log"
+PATH_DISK="/var/log"
+ZL2R=false
+COMP_ALG=lz4
+LOG_DISK_SIZE=400M
+EOF
+
+
 		
 printf "+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram changes to take effect. 
