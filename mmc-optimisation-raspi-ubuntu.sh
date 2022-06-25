@@ -23,19 +23,19 @@ sudo touch /etc/cloud/cloud-init.disabled
 sed -i s/$/' zswap.enabled=1'/ /boot/firmware/cmdline.txt
 
 #Disable hardware items in /boot/firmware/usercfg.txt so save power and resources
-echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/firmware/usercfg.txt
+echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/firmware/usercfg.txt 
 echo 'dtoverlay=disable-bt' | sudo tee -a /boot/firmware/usercfg.txt
-echo 'dtparam=audio=off' | sudo tee -a /boot/firmware/usercfg.txt
+echo 'dtparam=audio=off' | sudo tee -a /boot/firmware/usercfg.txt 
 
 # Disable Avahi to save memory - cloud init annoyingly installs this on first boot 
 # if you dont disable it before first connecting to the internet
-sudo systemctl stop avahi-daemon.service
-sudo systemctl disable avahi-daemon.service
-sudo systemctl stop avahi-daemon.socket
-sudo systemctl disable avahi-daemon.socket
+sudo systemctl stop avahi-daemon.service >/dev/null
+sudo systemctl disable avahi-daemon.service >/dev/null
+sudo systemctl stop avahi-daemon.socket >/dev/null
+sudo systemctl disable avahi-daemon.socket >/dev/null
 
 # Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
-echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
+echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf >/dev/null
 
 
 sleep 3
@@ -43,7 +43,7 @@ echo
 echo -e "${YELLOW}Setting up timesync...${NC}"
 echo
 #Set time server
-sudo cat <<EOF | sudo tee /etc/systemd/timesyncd.conf
+sudo cat <<EOF | sudo tee /etc/systemd/timesyncd.conf >/dev/null
 [Time]
 NTP=time.google.com time.windows.com
 RootDistanceMaxSec=5
@@ -62,7 +62,7 @@ echo
 
 # Change fstab to support minimal disk timestamping and delay writes from RAM to every 30min, tweak if you like:
 sudo sed -i 's/LABEL=writable/#LABEL=writable/g' /etc/fstab
-echo -e 'LABEL=writable  /        ext4   noatime,errors=remount-ro,commit=1800,defaults        0 1' | sudo tee -a /etc/fstab
+echo -e 'LABEL=writable  /        ext4   noatime,errors=remount-ro,commit=1800,defaults        0 1' | sudo tee -a /etc/fstab >/dev/null
 
 sleep 3
 echo 
@@ -72,7 +72,7 @@ echo
 ## Be super careful and dont mix tabs with spaces. Indents are critical. 
 ## A space in the wrong place = hell!
 #Configured Defaults are DHCP ETH0 
-sudo cat <<EOF | sudo tee /etc/netplan/50-cloud-init.yaml
+sudo cat <<EOF | sudo tee /etc/netplan/50-cloud-init.yaml >/dev/null
 # Uncomment your preferred example configuration
 # Be SUPER CAREFUL to keep the exact spacing and formatting
 # DO NOT mix tabs and spaces. Indents are critical.
@@ -125,7 +125,7 @@ sudo apt update
 sudo apt install net-tools -y
 sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
-sudo cat <<EOF | sudo tee /etc/log2ram.conf
+sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
 SIZE=192M
 MAIL=true
 #PATH_DISK="/var/log";"/opt/gvm/var/log"
