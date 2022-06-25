@@ -13,4 +13,4 @@ cloud-init , wifi, bluetooth, audio chip , avahi services disabled
 
 For Ubuntu running USB SSD drive, some gentle tweaks to standardise with 
 
-wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspi-ubuntu.sh -O mmc-optimisation-raspi-ubuntu.sh && chmod +x mmc-optimisation-raspi-ubuntu.sh && sudo ./mmc-optimisation-raspi-ubuntu.sh
+    wget -O mmc-optimisation-raspi-ubuntu.sh && chmod +x mmc-optimisation-raspi-ubuntu.sh && sudo ./mmc-optimisation-raspi-ubuntu.sh
