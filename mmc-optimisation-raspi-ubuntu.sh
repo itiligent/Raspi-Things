@@ -119,6 +119,7 @@ echo -e "getting ready to install log2ram..."
 sudo apt update 
 sudo install net-tools -y
 sudo install log2ram -y
+sleep 15
 
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf
