@@ -2,7 +2,8 @@ Preserve MMC lifewith this optimised configuration for Raspi Ubuntu. Apply to a 
     
 Enhanments:
     zswap memory managment enabled
-    Enhanced partitioning removing all file access time disk writes. All disk writes committed every 30 min
+    Enhanced partitioning removing all file access time disk writes. 
+    All disk writes committed every 30 min
     Timesync set
     Netplan options for a second USB LTE NIC - inc routing metrics
     Log2Ram - customisable ramdrive for log files, writes out logs to disk once daily.
