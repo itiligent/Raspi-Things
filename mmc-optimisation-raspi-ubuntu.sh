@@ -37,7 +37,6 @@ sudo systemctl disable avahi-daemon.service >/dev/null
 # Set Swappiness changes the frequency the OS goes to the disk. 60 is Ubuntu default. 0 is not recommended
 echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf >/dev/null
 
-
 sleep 3
 echo 
 echo -e "${YELLOW}Setting up timesync...${NC}"
@@ -122,7 +121,7 @@ echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packa
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 sudo apt update 
 # Lets also install net-tools so it feels like Raspian 
-sudo apt install net-tools -y
+sudo apt install net-tools -y >/dev/null
 sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
