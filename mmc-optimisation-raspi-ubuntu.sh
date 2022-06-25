@@ -121,7 +121,7 @@ echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packa
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 sudo apt update 
 # Lets also install a few small extras so it feels like Raspian 
-sudo apt install net-tools putty-tools minicom -y >/dev/null
+sudo apt install net-tools -y >/dev/null
 sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
