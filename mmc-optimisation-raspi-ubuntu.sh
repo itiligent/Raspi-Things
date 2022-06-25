@@ -8,9 +8,13 @@
 
 clear
 
+YELLOW='\033[1;33m'
+RED='\033[1;31m'
+NC='\033[0m' # No Color
+
 sleep 3
 echo 
-echo -e "Disabling a few defults..."
+echo -e "${YELLOW}Disabling a few defaults...${NC}"
 echo
 # Disbale cloud init coz its a pain
 sudo touch /etc/cloud/cloud-init.disabled
@@ -36,7 +40,7 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 
 sleep 3
 echo 
-echo -e "Setting up timesync..."
+echo -e "${YELLOW}Setting up timesync...${NC}"
 echo
 #Set time server
 sudo cat <<EOF | sudo tee /etc/systemd/timesyncd.conf
@@ -49,7 +53,7 @@ EOF
 
 sleep 3
 echo 
-echo -e "Modifying partitions for MMC performance..."
+echo -e "${YELLOW}Modifying partitions for MMC performance...${NC}"
 echo
 # MMC Reduce Wear
 # For refernce, Ubuntu fpr raspi default fstab is:
@@ -62,7 +66,7 @@ echo -e 'LABEL=writable  /        ext4   noatime,errors=remount-ro,commit=1800,d
 
 sleep 3
 echo 
-echo -e "Setting up network..."
+echo -e "${YELLOW}Setting up network...${NC}"
 echo
 ## Uncomment the network config required, you can only choose one, or build your own
 ## Be super careful and dont mix tabs with spaces. Indents are critical. 
@@ -111,7 +115,7 @@ sudo netplan apply
 
 sleep 3
 echo 
-echo -e "getting ready to install log2ram..."
+echo -e "${YELLOW}Getting ready to install log2ram...${NC}"
 echo
 # Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
@@ -131,6 +135,6 @@ COMP_ALG=lz4
 LOG_DISK_SIZE=400M
 EOF
 		
-printf "+---------------------------------------------------------------------------------------------------------------------------
+printf "${RED}+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram changes to take effect. 
-+---------------------------------------------------------------------------------------------------------------------------\n"
++---------------------------------------------------------------------------------------------------------------------------${NC}\n"
