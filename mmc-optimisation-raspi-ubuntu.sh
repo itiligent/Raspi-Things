@@ -121,10 +121,10 @@ sudo netplan generate
 sudo netplan apply
 
 # Now upgrade everything 
-sudo apt update && sudo apt upgrade -y
+# sudo apt update && sudo apt upgrade -y
 
 # Lets also install net-tools so it feels like Raspian 
-sudo apt update && sudo apt install net-tools log2ram -y
+sudo apt update && sudo install net-tools log2ram -y
 		
 printf "+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram changes to take effect. 
