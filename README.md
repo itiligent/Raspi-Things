@@ -14,4 +14,4 @@ cloud-init , wifi, bluetooth, audio chip , avahi services disabled
 
 For Ubuntu Raspi on USB SSD drive, similar tweaks without messing with partitions and log2ram. 
 
-    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/usbssd-optimisation-ubuntu.sh -O usbssd-optimisation-ubuntu.sh && chmod +x usbssd-optimisation-ubuntu.sh && sudo ./usbssd-optimisation-ubuntu.sh
+    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/usbssd-optimisation-ubuntu.sh -O usbssd-optimisation-ubuntu.sh && chmod +x usbssd-optimisation-ubuntu.sh && sudo ./usbssd-optimisation-ubuntu.sh1
