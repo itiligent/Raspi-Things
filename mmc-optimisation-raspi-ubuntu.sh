@@ -109,6 +109,9 @@ EOF
 sudo netplan generate
 sudo netplan apply
 
+sleep 15
+echo -e "getting ready to install log2ram..."
+
 # Now upgrade everything 
 # sudo apt update && sudo apt upgrade -y
 
