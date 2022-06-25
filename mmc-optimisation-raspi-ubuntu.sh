@@ -1,6 +1,6 @@
 #!/bin/bash
 ###################################################################################
-# Build Ubuntu optimised saving MMC cards from an early death on Raspi
+# Build Ubuntu optimised for MMC cards - Extend MMC life on Raspi
 # For Ubuntu 20.04.4 (For Ubuntu USB/SSD optimised configs, see separate scripts)
 # David Harrop 
 # June 2022
