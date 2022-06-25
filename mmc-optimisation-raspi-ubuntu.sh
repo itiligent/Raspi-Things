@@ -60,12 +60,15 @@ echo -e 'LABEL=writable  /        ext4   noatime,errors=remount-ro,commit=1800,d
 echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf
 
 # Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
-echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list 
-sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.frepo.gpg 
-sudo apt update & sudo apt upgrade -y
+echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
+sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
+sudo apt update && sudo apt install log2ram -y
 
-# Lets also install net-tools while we're at it - so it feels like Raspian 
-sudo apt install log2ram net-tools -y
+# Lets also install net-tools so it feels like Raspian 
+sudo apt install net-tools -y
+
+# Now upgrade everything 
+sudo apt update && sudo apt upgrade -y
 
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf
