@@ -1,3 +1,0 @@
-Expand MMC
-sudo fdisk /dev/mmcblk0  d  2  n  p  2 enter enter n  w  reboot
-sudo resize2fs /dev/mmcblk0p2
