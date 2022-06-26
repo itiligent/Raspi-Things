@@ -18,7 +18,7 @@ Optimised MMC configuration for RASPIAN. Apply to a fresh & default RASPIAN imag
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
 
 
-Optimised MMC configuration for RASPIAN. Apply to a fresh & default RASPIAN image!! (without experimental ZRAM) 
+Optimised MMC configuration for RASPIAN (Without experimental ZRAM.) Apply to a fresh & default RASPIAN image!! 
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian-no-zram.sh -O mmc-optimisation-raspian-no-zram.sh && chmod +x mmc-optimisation-raspian-no-zram.sh && sudo ./mmc-optimisation-raspian-no-zram.sh
 
