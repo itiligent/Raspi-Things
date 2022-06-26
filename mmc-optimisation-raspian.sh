@@ -113,6 +113,7 @@ ZL2R=false
 COMP_ALG=lz4
 LOG_DISK_SIZE=300M
 EOF
+#Fix potential bug on first time run 
 sudo systemctl restart console-setup.service
 	
 printf "${RED}+---------------------------------------------------------------------------------------------------------------------------
