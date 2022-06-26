@@ -347,7 +347,7 @@ set_sysctl_value vm.dirty_background_ratio=1
 set_sysctl_value vm.dirty_ratio=50
 
 echo
-status_green "ZRAM should now be set up. Consider rebooting your device."
+status_green "ZRAM should now be set up. Please reboot your device."
 
 status "Below is a summary:"
 zramctl
