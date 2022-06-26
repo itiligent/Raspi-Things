@@ -1,8 +1,7 @@
 #!/bin/bash
 ###################################################################################
-# Build Ubuntu optimised for MMC cards - Extend MMC life on Raspi
-# For Raspian 
-# David Harrop 
+# Build Raspian from default factory image - General base settings
+# # David Harrop 
 # June 2022
 ###################################################################################
 
@@ -38,8 +37,11 @@ sudo systemctl stop wpa_supplicant >/dev/null
 sudo systemctl disable wpa_supplicant >/dev/null
 sudo systemctl disable bluetooth >/dev/null
 sudo systemctl stop bluetooth >/dev/null
-sudo systemctl disable triggerhappy >/dev/null
 sudo systemctl stop triggerhappy >/dev/null
+sudo systemctl disable triggerhappy >/dev/null
+sudo systemctl stop triggerhappy.socket >/dev/null
+sudo systemctl disable triggerhappy.socket >/dev/null
+
 sudo /etc/init.d/alsa-utils stop >/dev/null
 sudo /etc/init.d/alsa-utils disable >/dev/null
 
@@ -55,10 +57,11 @@ blacklist hci_uart
 EOF
 
 # Set locales to AU - adjust as needed
-sudo sed -i "s/en_GB.UTF-8 UTF-8/# en_GB.UTF-8 UTF-8/g" /etc/locale.gen
-sudo sed -i "s/# en_AU.UTF-8 UTF-8/en_AU.UTF-8 UTF-8/g" /etc/locale.gen
-sudo locale-gen
-sudo timedatectl set-timezone Australia/Melbourne
+locale="en_AU.UTF-8 UTF-8"
+#sudo sed -i "s/en_GB.UTF-8 UTF-8/# en_GB.UTF-8 UTF-8/g" /etc/locale.gen
+sudo sed -i "s/# $locale/$locale/g" /etc/locale.gen
+sudo locale-gen $locale
+sudo update-locale $locale
 
 sleep 2
 echo 

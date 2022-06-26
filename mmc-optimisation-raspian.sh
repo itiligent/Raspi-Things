@@ -1,7 +1,6 @@
 #!/bin/bash
 ###################################################################################
-# Build Ubuntu optimised for MMC cards - Extend MMC life on Raspi
-# For Raspian 
+# Build Rasian from default factory image: for Extened MMC card life on Raspi
 # David Harrop 
 # June 2022
 ###################################################################################
