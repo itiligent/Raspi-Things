@@ -2,7 +2,7 @@ Optimised MMC configuration for Raspi UBUNTU. Apply to a default UBUNTU image!!
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu.sh -O mmc-optimisation-ubuntu.sh && chmod +x mmc-optimisation-ubuntu.sh && sudo ./mmc-optimisation-ubuntu.sh
 
-Optimaed USB SSD configuration for UBUNTU (Must be used on a prebuilt UBUNTU USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
+Optimaed USB SSD configuration for Raspi UBUNTU (Must be used on a prebuilt UBUNTU USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/usbssd-optimisation-ubuntu.sh -O usbssd-optimisation-ubuntu.sh && chmod +x usbssd-optimisation-ubuntu.sh && sudo ./usbssd-optimisation-ubuntu.sh
 
