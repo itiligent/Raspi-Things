@@ -38,9 +38,10 @@ sudo systemctl stop wpa_supplicant >/dev/null
 sudo systemctl disable wpa_supplicant >/dev/null
 sudo systemctl disable bluetooth >/dev/null
 sudo systemctl stop bluetooth >/dev/null
-sudo systemctl disable triggerhappy >/dev/null
 sudo systemctl stop triggerhappy >/dev/null
-
+sudo systemctl disable triggerhappy >/dev/null
+sudo systemctl stop triggerhappy.socket >/dev/null
+sudo systemctl disable triggerhappy.socket >/dev/null
 
 sudo /etc/init.d/alsa-utils stop >/dev/null
 sudo /etc/init.d/alsa-utils disable >/dev/null
