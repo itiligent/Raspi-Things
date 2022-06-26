@@ -20,6 +20,6 @@ Optimised MMC configuration for RASPIAN. Apply to a fresh & default RASPIAN imag
 wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
 
 
-Optimised General configuration for RASPIAN - add usb-storage-quirks for USBSSD
+Optimised GENERAL configuration for RASPIAN - (add usb-storage-quirks for USB SSD)
 
-
+    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-raspian.sh -O general-optimisation-raspian.sh && chmod +x general-optimisation-raspian.sh && sudo ./general-optimisation-raspian.sh
