@@ -13,4 +13,4 @@ Optimised MMC configuration for RASPIAN. Apply to a default RASPIAN image!!
 
 Optimaed USB SSD configuration for RASPIAN
 
-TBC
+TBC 1
