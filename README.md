@@ -17,7 +17,7 @@ Optimised MMC configuration for RASPIAN. Apply to a fresh & default RASPIAN imag
 
 Optimised MMC configuration for RASPIAN. Apply to a fresh & default RASPIAN image!! (without experimental ZRAM) 
 
-wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
+    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian-no-zram.sh -O mmc-optimisation-raspian-no-zram.sh && chmod +x mmc-optimisation-raspian-no-zram.sh && sudo ./mmc-optimisation-raspian-no-zram.sh
 
 
 Optimised GENERAL configuration for RASPIAN - (add usb-storage-quirks for USB SSD)
