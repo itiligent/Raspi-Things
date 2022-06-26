@@ -22,9 +22,9 @@ echo
 touch /boot/sh
 
 #Disable hardware items in /boot/firmware/usercfg.txt so save power and resources
-echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/config.txt 
-echo 'dtoverlay=disable-bt' | sudo tee -a /boot/config.txt
-sudo sed -i  '$ a gpu_mem=16' /boot/config.txt
+sed -i '/Additional overlays and parameters/a dtoverlay=disable-wifi' /boot/config.txt
+sed -i '/Additional overlays and parameters/a dtoverlay=disable-bt' /boot/config.txt
+sed -i  '$ a gpu_mem=16' /boot/config.txt
 sed -i 's/dtparam=audio=on/dtparam=audio=off/g' /boot/config.txt
 sed -i '/console/a #USB SSD boot - run lsusb, then add lsusb device output code ????:???? at the start of the above line formatted as: usb-storage.quirks=????:????:u' /boot/cmdline.txt
 
@@ -37,11 +37,10 @@ sudo systemctl stop wpa_supplicant >/dev/null
 sudo systemctl disable wpa_supplicant >/dev/null
 sudo systemctl disable bluetooth >/dev/null
 sudo systemctl stop bluetooth >/dev/null
-sudo systemctl stop triggerhappy >/dev/null
-sudo systemctl disable triggerhappy >/dev/null
 sudo systemctl stop triggerhappy.socket >/dev/null
 sudo systemctl disable triggerhappy.socket >/dev/null
-
+sudo systemctl stop triggerhappy >/dev/null
+sudo systemctl disable triggerhappy >/dev/null
 sudo /etc/init.d/alsa-utils stop >/dev/null
 sudo /etc/init.d/alsa-utils disable >/dev/null
 
