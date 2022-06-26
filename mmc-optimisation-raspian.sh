@@ -8,6 +8,7 @@
 clear
 
 YELLOW='\033[1;33m'
+GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
@@ -117,9 +118,7 @@ EOF
 # Fix potential bug on first time run 
 sudo systemctl restart console-setup.service
 	
-printf "${RED}+---------------------------------------------------------------------------------------------------------------------------
-+ You will need to reboot for Log2Ram changes to take effect. 
-+---------------------------------------------------------------------------------------------------------------------------${NC}\n"
+printf "${GREEN} You will need to reboot for Log2Ram changes to take effect. ${NC}\n"
 
 ############################ Experimental Performance oriented fixes: ###########################################
 
