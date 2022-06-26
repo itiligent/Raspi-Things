@@ -111,7 +111,6 @@ COMP_ALG=lz4
 LOG_DISK_SIZE=300M
 EOF
 sudo systemctl restart console-setup.service
-sudo systemctl start console-setup.service
 	
 printf "${RED}+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram changes to take effect. 
