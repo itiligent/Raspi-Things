@@ -209,18 +209,14 @@ status_green "Done"
 
 status "Creating zram script: /usr/bin/zram.sh"
 echo '#!/bin/bash
-
 export LANG=C
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
-
 if [ "$1" == --help ] || [ "$1" == -h ];then
   echo -e "This is a script made by Botspot to increase usable RAM by setting up ZRAM.
 ZRAM uses compression to fit more memory in your available RAM.
 This script will setup a ZRAM swapspace that is 4 times larger than usable RAM.
 It also configures high-speed RAM-based file-storage at /zram.
-
 Usage:
-
 sudo zram.sh               Setup zram-swap and storage (if enabled)
 sudo zram.sh stop          Disable all ZRAM devices and exit
 sudo zram.sh storage-off   Disable the file-storage at /zram on next run
@@ -228,13 +224,10 @@ sudo zram.sh storage-on    Enable the file-storage at /zram on next run
 zram.sh --help, -h         Display this information and exit"
   exit 0
 fi
-
-
 if [ $(id -u) -ne 0 ]; then
   echo "$0 must be run as root user"
   exit 1
 fi
-
 #avoid creating /zram storage if storage-off flag passed
 if [ "$1" == storage-off ]; then
   #retain this flag for next boot
@@ -247,13 +240,11 @@ elif [ "$1" == storage-on ]; then
   sed -i "s+^ExecStart=/usr/bin/zram.sh storage-off$+ExecStart=/usr/bin/zram.sh+g" /etc/systemd/system/zram-swap.service
   echo -e "zram.sh will set up file-storage at /zram from now on."
 fi
-
 # Load zram module
 if ! modprobe zram ;then
   echo "Failed to load zram kernel module"
   exit 1
 fi
-
 # disable all zram devices
 echo -n "Disabling zram... "
 IFS=$'\''\n'\''
@@ -268,17 +259,13 @@ for device_number in $(find /dev/ -name zram* -type b | tr -cd "0123456789\n") ;
   echo $device_number >/sys/class/zram-control/hot_remove
 done
 echo Done
-
 rm -rf /zram
-
 #exit script now if "exit" flag passed
 if [ "$1" == stop ]; then
   exit 0
 fi
-
 #create new zram drive - for swap
 drive_num=$(cat /sys/class/zram-control/hot_add)
-
 # use zstd compression if available - best option according to https://linuxreviews.org/Comparison_of_Compression_Algorithms#zram_block_drive_compression
 if cat /sys/block/zram${drive_num}/comp_algorithm | grep -q zstd ;then
   algorithm=zstd
@@ -286,16 +273,12 @@ else
   algorithm=lz4
 fi
 echo $algorithm > /sys/block/zram${drive_num}/comp_algorithm
-
 totalmem=$(free | grep -e "^Mem:" | awk '\''{print $2}'\'')
-
 #create zram disk 4 times larger than usable RAM - compression ratio for zstd can approach 5:1 according to https://linuxreviews.org/Zram
 echo $((totalmem * 1024 * 4)) > /sys/block/zram${drive_num}/disksize
-
 #make the swap device (by default this will be /dev/zram0)
 mkswap /dev/zram${drive_num}
 swapon /dev/zram${drive_num} -d -p 1
-
 #create second zram drive: for temporary user-storage at /zram
 if ! grep -qxF "ExecStart=/usr/bin/zram.sh storage-off" /etc/systemd/system/zram-swap.service ;then
   echo "Setting up ZRAM-powered file storage at /zram"
@@ -322,13 +305,11 @@ echo '  - Creating zram-swap.service'
 echo '[Unit]
 Description=Configures zram swap device
 After=local-fs.target
-
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/zram.sh
 ExecStop=/usr/bin/zram.sh stop
 RemainAfterExit=yes
-
 [Install]
 WantedBy = multi-user.target' | sudo tee /etc/systemd/system/zram-swap.service >/dev/null
 echo '  - Reloading Systemd unit files'
@@ -348,11 +329,9 @@ set_sysctl_value vm.dirty_background_ratio=1
 set_sysctl_value vm.dirty_ratio=50
 
 echo
-status_green "ZRAM should now be set up. ${RED)Reboot your system now.${NC)"
+status_green "ZRAM should now be set up. Please reboot your device."
 
 status "Below is a summary:"
 zramctl
 status "You can see this at any time by running 'zramctl'"
 sleep 1
-
-
