@@ -41,9 +41,6 @@ sudo systemctl stop triggerhappy.socket >/dev/null
 sudo systemctl disable triggerhappy.socket >/dev/null
 sudo systemctl stop triggerhappy >/dev/null
 sudo systemctl disable triggerhappy >/dev/null
-sudo /etc/init.d/alsa-utils stop >/dev/null
-sudo /etc/init.d/alsa-utils disable >/dev/null
-
 
 #Stop drivers being loaded and taking up memory/power
 cat > /etc/modprobe.d/raspi-blacklist.conf <<EOF
