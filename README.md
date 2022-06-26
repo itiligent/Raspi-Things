@@ -9,7 +9,7 @@ Optimaed USB SSD configuration for Raspi UBUNTU (Must be used on a prebuilt UBUN
 
 Optimised MMC configuration for RASPIAN. Apply to a default RASPIAN image!! 
  
-    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
+    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && sudo chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
 
 Optimaed USB SSD configuration for RASPIAN
 
