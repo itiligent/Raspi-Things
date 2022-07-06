@@ -85,7 +85,7 @@ echo 'vm.swappiness=10' | sudo tee -a /etc/sysctl.conf >/dev/null
 
 sleep 2
 echo 
-echo -e "${YELLOW}Modifying partitions for MMC performance...${NC}"
+echo -e "${YELLOW}Modifying partitions for MMC longevity...${NC}"
 echo
 # MMC Reduce Wear
 # For refernce, Ubuntu fpr raspi default fstab is:
