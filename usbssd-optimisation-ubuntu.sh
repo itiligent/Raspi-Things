@@ -114,7 +114,8 @@ sudo netplan generate
 sudo netplan apply
 
 # Lets also install a few small extras so it feels like Raspian 
-sudo apt update 
+sudo apt updatesudo 
+sudo apt upgrade -y
 sudo apt install net-tools -y
 		
 printf "${YELLOW}+---------------------------------------------------------------------------------------------------------------------------
