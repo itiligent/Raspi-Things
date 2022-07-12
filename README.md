@@ -1,4 +1,4 @@
-## RASBIAN 
+## RASBIAN BUILDS
 
 Optimised MMC Longevity config for RASPIAN. (Apply to a default RASPIAN image!!)
  
@@ -15,7 +15,7 @@ Optimised GENERAL configuration for RASPIAN on USB HDD. (Please see "usb-storage
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-raspian.sh -O general-optimisation-raspian.sh && chmod +x general-optimisation-raspian.sh && sudo ./general-optimisation-raspian.sh
 
 
-## UBUNTU
+## UBUNTU BUILDS
 
 Optimised MMC Longevity config for Raspi UBUNTU. Apply to a fresh & default UBUNTU Raspi image!!
 
