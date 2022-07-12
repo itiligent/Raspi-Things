@@ -13,6 +13,8 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 ############################ Univerasl fixes: ###########################################
+sudo apt update
+sudo apt upgrade
 
 sleep 2
 echo 
