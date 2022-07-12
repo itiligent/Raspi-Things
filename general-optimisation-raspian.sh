@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 
 ############################ Univerasl fixes: ###########################################
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 sleep 2
 echo 
