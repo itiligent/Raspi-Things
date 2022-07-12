@@ -13,6 +13,8 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 ############################ Univerasl fixes: ###########################################
+sudo apt update
+sudo apt upgrade
 
 sleep 2
 echo 
@@ -102,8 +104,6 @@ echo
 # Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
-sudo apt update
-sudo apt upgrade
 sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
