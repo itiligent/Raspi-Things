@@ -13,6 +13,9 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
+sudo apt update
+sudo apt upgrade
+
 sleep 3
 echo 
 echo -e "${YELLOW}Disabling a few defaults to speed things up...${NC}"
