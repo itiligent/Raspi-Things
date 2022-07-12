@@ -14,7 +14,7 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 sleep 3
 echo 
