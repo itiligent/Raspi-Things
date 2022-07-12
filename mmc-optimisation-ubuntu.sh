@@ -58,7 +58,7 @@ EOF
 
 sleep 3
 echo 
-echo -e "${YELLOW}Modifying partitions for MMC performance...${NC}"
+echo -e "${YELLOW}Modifying partitions for MMC longevity...${NC}"
 echo
 # MMC Reduce Wear
 # For refernce, Ubuntu fpr raspi default fstab is:
