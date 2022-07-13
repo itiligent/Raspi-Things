@@ -167,6 +167,7 @@ for i in $(seq ${NRDEVICES}); do
   swapon -p 5 /dev/zram${DEVNUMBER}
 done
 EOF
+apt autoremove -y
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram and ZRAM changes to take effect. 
