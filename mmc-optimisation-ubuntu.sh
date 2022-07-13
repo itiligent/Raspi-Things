@@ -160,12 +160,13 @@ mem=$(((totalmem / 4 / ${NRDEVICES}) * 1024))
 # initialize the devices
 for i in $(seq ${NRDEVICES}); do
   DEVNUMBER=$((i - 1))
-  echo $mem > /sys/block/zram${DEVNUMBER}/disksize
   echo zstd > /sys/block/zram${DEVNUMBER}/comp_algorithm
+  echo $mem > /sys/block/zram${DEVNUMBER}/disksize
 
   mkswap /dev/zram${DEVNUMBER}
   swapon -p 5 /dev/zram${DEVNUMBER}
 done
+
 EOF
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
