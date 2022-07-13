@@ -117,6 +117,7 @@ sudo netplan apply
 sudo apt updatesudo 
 sudo apt upgrade -y
 sudo apt install net-tools -y
+apt autoremove -y
 		
 printf "${YELLOW}+---------------------------------------------------------------------------------------------------------------------------
 + Done 
