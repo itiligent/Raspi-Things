@@ -14,7 +14,7 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 sudo apt update
-sudo apt install zram-config
+sudo apt install zram-config util-linux -y
 sudo apt upgrade -y
 
 sleep 3
@@ -139,9 +139,7 @@ COMP_ALG=lz4
 LOG_DISK_SIZE=300M
 EOF
 		
-
-
-
+sed -i 's/mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024 ))/imem=$(((totalmem / 4 / ${NRDEVICES}) * 1024 ))/g' /usr/bin/init-zram-swapping
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram and ZRAM changes to take effect. 
