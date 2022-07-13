@@ -119,6 +119,8 @@ EOF
 
 # Fix potential bug on first time run 
 sudo systemctl restart console-setup.service
+
+apt autoremove -y
 	
 printf "${GREEN} You will need to reboot for Log2Ram changes to take effect. ${NC}\n"
 echo
