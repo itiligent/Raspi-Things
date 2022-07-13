@@ -139,7 +139,34 @@ COMP_ALG=lz4
 LOG_DISK_SIZE=300M
 EOF
 		
-sed -i 's/mem=$(((totalmem / 2 / ${NRDEVICES}) * 1024 ))/imem=$(((totalmem / 4 / ${NRDEVICES}) * 1024 ))/g' /usr/bin/init-zram-swapping
+cat <<-"EOF"| sudo tee /usr/bin/init-zram-swapping
+#!/bin/sh
+
+# load dependency modules
+NRDEVICES=$(grep -c ^processor /proc/cpuinfo | sed 's/^0$/1/')
+if modinfo zram | grep -q ' zram_num_devices:' 2>/dev/null; then
+  MODPROBE_ARGS="zram_num_devices=${NRDEVICES}"
+elif modinfo zram | grep -q ' num_devices:' 2>/dev/null; then
+  MODPROBE_ARGS="num_devices=${NRDEVICES}"
+else
+  exit 1
+fi
+modprobe zram $MODPROBE_ARGS
+
+# Calculate memory to use for zram (1/4 of ram)
+totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
+mem=$(((totalmem / 4 / ${NRDEVICES}) * 1024))
+
+# initialize the devices
+for i in $(seq ${NRDEVICES}); do
+  DEVNUMBER=$((i - 1))
+  echo $mem > /sys/block/zram${DEVNUMBER}/disksize
+  echo zstd > /sys/block/zram${DEVNUMBER}/comp_algorithm
+
+  mkswap /dev/zram${DEVNUMBER}
+  swapon -p 5 /dev/zram${DEVNUMBER}
+done
+EOF
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram and ZRAM changes to take effect. 
