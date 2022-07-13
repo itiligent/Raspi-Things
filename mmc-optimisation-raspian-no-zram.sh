@@ -75,6 +75,7 @@ PollIntervalMinSec=32
 PollIntervalMaxSec=2048
 EOF
 
+apt autoremove -y
 
 ############################ MMC oriented fixes: ###########################################
 
