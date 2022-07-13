@@ -166,7 +166,6 @@ for i in $(seq ${NRDEVICES}); do
   mkswap /dev/zram${DEVNUMBER}
   swapon -p 5 /dev/zram${DEVNUMBER}
 done
-
 EOF
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
