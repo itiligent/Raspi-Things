@@ -140,7 +140,7 @@ LOG_DISK_SIZE=300M
 EOF
 
 cp /usr/bin/init-zram-swapping /usr/bin/init-zram-swapping.bak
-#restore
+#to restore...
 #cat init-zram-swapping.bak | sudo tee init-zram-swapping
 cat <<-"EOF"| sudo tee /usr/bin/init-zram-swapping
 #!/bin/sh
