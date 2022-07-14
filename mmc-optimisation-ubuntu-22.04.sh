@@ -143,9 +143,17 @@ cp /usr/bin/init-zram-swapping /usr/bin/init-zram-swapping.bak
 #restore
 #cat init-zram-swapping.bak | sudo tee init-zram-swapping
 #cat <<-"EOF"| sudo tee /usr/bin/init-zram-swapping
-#!/bin/sh
-
-#EOF
+!/bin/sh
+modprobe zram
+# Calculate memory to use for zram (1/4 of ram)
+totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
+mem=$((totalmem / 4 * 1024))
+# initialize the devices
+echo zstd > /sys/block/zram0/comp_algorithm
+echo $mem > /sys/block/zram0/disksize
+mkswap /dev/zram0
+swapon -p 5 /dev/zram0
+EOF
 apt autoremove -y
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
