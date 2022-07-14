@@ -138,7 +138,8 @@ ZL2R=false
 COMP_ALG=lz4
 LOG_DISK_SIZE=300M
 EOF
-		
+
+cp /usr/bin/init-zram-swapping /usr/bin/init-zram-swapping.bak
 cat <<-"EOF"| sudo tee /usr/bin/init-zram-swapping
 #!/bin/sh
 
