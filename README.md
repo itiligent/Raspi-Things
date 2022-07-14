@@ -31,7 +31,7 @@ MMC LONGEVITY config optimised for Raspi UBUNTU (Without experimental ZRAM)
 
 
 
-GENERAL configuration optimised for Raspi UBUNTU un USB HDD (Must use pre-prepared UBUNTU USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
+GENERAL configuration optimised for Raspi UBUNTU USB HDD (Must use pre-prepared UBUNTU USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/usbssd-optimisation-ubuntu.sh -O usbssd-optimisation-ubuntu.sh && chmod +x usbssd-optimisation-ubuntu.sh && sudo ./usbssd-optimisation-ubuntu.sh
 
