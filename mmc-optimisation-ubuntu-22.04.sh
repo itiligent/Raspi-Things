@@ -152,6 +152,7 @@ totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
 mem=$((totalmem / 4 * 1024))
 
 # initialize the devices
+echo zstd > /sys/block/zram0/comp_algorithm
 echo $mem > /sys/block/zram0/disksize
 mkswap /dev/zram0
 swapon -p 5 /dev/zram0
