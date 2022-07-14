@@ -17,9 +17,9 @@ GENERAL configuration optimised for RASPIAN on USB HDD. (Please see "usb-storage
 
 ## UBUNTU BUILDS
 
-MMC LONGEVITY config optimised for Raspi UBUNTU. 
+MMC LONGEVITY config optimised for Raspi UBUNTU 20.04.4. 
 
-    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu.sh -O mmc-optimisation-ubuntu.sh && chmod +x mmc-optimisation-ubuntu.sh && sudo ./mmc-optimisation-ubuntu.sh    
+    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu-20.04.sh -O mmc-optimisation-ubuntu-20.04.sh && chmod +x mmc-optimisation-ubuntu-20.04.sh && sudo ./mmc-optimisation-ubuntu-20.04.sh    
     
 MMC LONGEVITY config optimised for Raspi UBUNTU (Without experimental ZRAM)      
     
