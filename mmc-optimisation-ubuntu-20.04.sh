@@ -14,7 +14,7 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 sudo apt update
-sudo apt install zram-config linux-modules-extra-raspi -y
+sudo apt install zram-config -y
 sudo apt upgrade -y
 
 sleep 3
