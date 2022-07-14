@@ -30,7 +30,7 @@ MMC LONGEVITY config optimised for Raspi UBUNTU Without ZRAM)
      wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu-no-zram.sh -O mmc-optimisation-ubuntu-no-zram.sh && chmod +x mmc-optimisation-ubuntu-no-zram.sh && sudo ./mmc-optimisation-ubuntu-no-zram.sh
 
 
-GENERAL configuration optimised for Raspi UBUNTU USB HDD (Must use pre-prepared UBUNTU USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
+GENERAL configuration optimised for Raspi UBUNTU USB HDD (Needs special USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/usbssd-optimisation-ubuntu.sh -O usbssd-optimisation-ubuntu.sh && chmod +x usbssd-optimisation-ubuntu.sh && sudo ./usbssd-optimisation-ubuntu.sh
 
