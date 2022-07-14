@@ -5,7 +5,7 @@ MMC LONGEVITY config optimised for RASPIAN.
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
 
 
-MMC LONGEVITY config optimised for RASPIAN Without experimental ZRAM. 
+MMC LONGEVITY config optimised for RASPIAN Without ZRAM. 
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian-no-zram.sh -O mmc-optimisation-raspian-no-zram.sh && chmod +x mmc-optimisation-raspian-no-zram.sh && sudo ./mmc-optimisation-raspian-no-zram.sh
 
@@ -25,10 +25,9 @@ MMC LONGEVITY config optimised for Raspi UBUNTU 20.04.4.
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu-20.04.sh -O mmc-optimisation-ubuntu-20.04.sh && chmod +x mmc-optimisation-ubuntu-20.04.sh && sudo ./mmc-optimisation-ubuntu-20.04.sh    
     
-MMC LONGEVITY config optimised for Raspi UBUNTU (Without experimental ZRAM)      
+MMC LONGEVITY config optimised for Raspi UBUNTU Without ZRAM)      
     
      wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu-no-zram.sh -O mmc-optimisation-ubuntu-no-zram.sh && chmod +x mmc-optimisation-ubuntu-no-zram.sh && sudo ./mmc-optimisation-ubuntu-no-zram.sh
-
 
 
 GENERAL configuration optimised for Raspi UBUNTU USB HDD (Must use pre-prepared UBUNTU USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
