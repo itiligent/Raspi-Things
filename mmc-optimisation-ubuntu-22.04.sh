@@ -143,7 +143,7 @@ cp /usr/bin/init-zram-swapping /usr/bin/init-zram-swapping.bak
 #restore
 #cat init-zram-swapping.bak | sudo tee init-zram-swapping
 cat <<-"EOF"| sudo tee /usr/bin/init-zram-swapping
-!/bin/sh
+#!/bin/sh
 modprobe zram
 # Calculate memory to use for zram (1/4 of ram)
 totalmem=`LC_ALL=C free | grep -e "^Mem:" | sed -e 's/^Mem: *//' -e 's/  *.*//'`
