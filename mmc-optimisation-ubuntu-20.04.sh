@@ -170,6 +170,7 @@ for i in $(seq ${NRDEVICES}); do
   swapon -p 5 /dev/zram${DEVNUMBER}
 done
 EOF
+
 apt autoremove -y
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
