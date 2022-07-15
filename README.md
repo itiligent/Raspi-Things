@@ -1,4 +1,4 @@
-## RASBIAN AUTOMATIC SYSTEM BUILDS
+## RASBIAN AUTOMATIC SYSTEM CONFIG SCRIPTS
 
 MMC LONGEVITY config optimised for RASPIAN. 
  
@@ -15,7 +15,7 @@ GENERAL configuration optimised for RASPIAN on USB HDD. (Please see "usb-storage
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-raspian.sh -O general-optimisation-raspian.sh && chmod +x general-optimisation-raspian.sh && sudo ./general-optimisation-raspian.sh
 
 
-## UBUNTU AUTOMATIC SYSTEM BUILDS
+## UBUNTU RASPI AUTOMATIC SYSTEM CONFIG SCRIPTS
 
 MMC LONGEVITY config optimised for Raspi UBUNTU 22.04 
 
