@@ -1,7 +1,7 @@
 #!/bin/bash
 ###################################################################################
 # Build Ubuntu optimised for USB SSD 
-# For Utuntu 20.04.4  
+# For Ubuntu 22.04  
 # David Harrop 
 # June 2022
 ###################################################################################
@@ -12,16 +12,13 @@ YELLOW='\033[1;33m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
-
 sudo apt update
-pi-bluetooth
-libraspberrypi-bin
-raspi-config
-libws2811-dev
-
-
-
-
+sudo apt install zram-config linux-modules-extra-raspi -y
+#test packages
+#pi-bluetooth
+#libraspberrypi-bin
+#raspi-config
+#libws2811-dev
 sudo apt upgrade -y
 
 sleep 3
