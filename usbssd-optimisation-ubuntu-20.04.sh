@@ -12,6 +12,14 @@ YELLOW='\033[1;33m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
+sudo apt update
+sudp apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth -y
+
+# Lets also install a few small extras so it feels like Raspian 
+sudo apt updatesudo 
+sudo apt install net-tools -y
+sudo apt upgrade -y
+
 sleep 3
 echo 
 echo -e "${YELLOW}Disabling a few defaults to speed things up...${NC}"
@@ -21,9 +29,6 @@ sudo touch /etc/cloud/cloud-init.disabled
 
 #Enable zswap for some performance boost!
 sed -i s/$/' zswap.enabled=1'/ /boot/firmware/cmdline.txt
-
-sudo apt update
-sudp apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth -y
 
 #Disable hardware items in /boot/firmware/usercfg.txt so save power and resources
 echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/firmware/usercfg.txt 
@@ -116,10 +121,6 @@ EOF
 sudo netplan generate
 sudo netplan apply
 
-# Lets also install a few small extras so it feels like Raspian 
-sudo apt updatesudo 
-sudo apt upgrade -y
-sudo apt install net-tools -y
 apt autoremove -y
 		
 printf "${YELLOW}+---------------------------------------------------------------------------------------------------------------------------
