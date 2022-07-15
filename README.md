@@ -12,11 +12,11 @@ GENERAL configuration optimised for RASPIAN (Please see "usb-storage-quirks" for
 
 ## UBUNTU RASPI AUTOMATIC SYSTEM CONFIG SCRIPTS
 
-MMC LONGEVITY config optimised for Raspi UBUNTU 22.04 
+MMC LONGEVITY UBUNTU 22.04 
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu-22.04.sh -O mmc-optimisation-ubuntu-22.04.sh && chmod +x mmc-optimisation-ubuntu-22.04.sh && sudo ./mmc-optimisation-ubuntu-22.04.sh  
 
-MMC LONGEVITY config optimised for Raspi UBUNTU 20.04.4. 
+MMC LONGEVITY UBUNTU 20.04.4. 
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu-20.04.sh -O mmc-optimisation-ubuntu-20.04.sh && chmod +x mmc-optimisation-ubuntu-20.04.sh && sudo ./mmc-optimisation-ubuntu-20.04.sh    
     
