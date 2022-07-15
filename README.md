@@ -21,12 +21,12 @@ MMC LONGEVITY UBUNTU 20.04.4.
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-ubuntu-20.04.sh -O mmc-optimisation-ubuntu-20.04.sh && chmod +x mmc-optimisation-ubuntu-20.04.sh && sudo ./mmc-optimisation-ubuntu-20.04.sh    
     
 
-USB HDD UBUNTU 22.4 (Needs special USB SSD ready image)
+USB HDD UBUNTU 22.4 (Requires decompressed kernel image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/usbssd-optimisation-ubuntu-22.04.sh -O usbssd-optimisation-ubuntu-22.04.sh && chmod +x usbssd-optimisation-ubuntu-22.04.sh && sudo ./usbssd-optimisation-ubuntu-22.04.sh
 
     
-USB HDD UBUNTU 20.04.4 (Needs special USB SSD ready image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
+USB HDD UBUNTU 20.04.4 (Requires decompressed kernel image - see raspi-usb-boot-fix-ubuntu-20.4.sh)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/usbssd-optimisation-ubuntu-20.04.sh -O usbssd-optimisation-ubuntu-20.04.sh && chmod +x usbssd-optimisation-ubuntu-20.04.sh && sudo ./usbssd-optimisation-ubuntu-20.04.sh
 
