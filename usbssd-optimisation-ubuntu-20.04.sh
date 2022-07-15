@@ -13,11 +13,7 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 sudo apt update
-sudp apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth -y
-
-# Lets also install a few small extras so it feels like Raspian 
-sudo apt updatesudo 
-sudo apt install net-tools -y
+sudo apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth -y
 sudo apt upgrade -y
 
 sleep 3
