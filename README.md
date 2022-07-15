@@ -5,7 +5,7 @@ MMC LONGEVITY config optimised for RASPIAN.
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
 
 
-GENERAL configuration optimised for RASPIAN on USB HDD. (Please see "usb-storage-quirks" for some USB3.0 SSD devices)
+GENERAL configuration optimised for RASPIAN (Please see "usb-storage-quirks" for some USB3.0 SSD devices)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-raspian.sh -O general-optimisation-raspian.sh && chmod +x general-optimisation-raspian.sh && sudo ./general-optimisation-raspian.sh
 
