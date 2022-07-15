@@ -1,7 +1,7 @@
 #!/bin/bash
 ###################################################################################
 # Build Ubuntu optimised for USB SSD 
-# For RASPIAN  
+# For Utuntu 20.04.4  
 # David Harrop 
 # June 2022
 ###################################################################################
@@ -21,6 +21,9 @@ sudo touch /etc/cloud/cloud-init.disabled
 
 #Enable zswap for some performance boost!
 sed -i s/$/' zswap.enabled=1'/ /boot/firmware/cmdline.txt
+
+sudo apt update
+sudp apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth -y
 
 #Disable hardware items in /boot/firmware/usercfg.txt so save power and resources
 echo 'dtoverlay=disable-wifi' | sudo tee -a /boot/firmware/usercfg.txt 
@@ -54,7 +57,7 @@ EOF
 
 sleep 3
 #echo 
-#echo -e "${YELLOW}Modifying partitions for MMC performance...${NC}"
+#echo -e "${YELLOW}Modifying partitions for disk performance...${NC}"
 #echo
 # For refernce, Ubuntu fpr raspi default fstab is:
 #LABEL=writable  /        ext4   defaults        0 1
