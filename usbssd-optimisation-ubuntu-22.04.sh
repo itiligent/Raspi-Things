@@ -13,12 +13,7 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 sudo apt update
-sudo apt install zram-config linux-modules-extra-raspi -y
-#test packages
-#pi-bluetooth
-#libraspberrypi-bin
-#raspi-config
-#libws2811-dev
+sudo apt install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
 sudo apt upgrade -y
 
 sleep 3
