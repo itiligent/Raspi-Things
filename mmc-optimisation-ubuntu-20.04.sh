@@ -14,7 +14,7 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 sudo apt update
-sudo apt install zram-config -y
+sudo apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth zram-config -y
 sudo apt upgrade -y
 
 sleep 3
