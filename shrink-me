@@ -1,4 +1,7 @@
 #!/bin/bash
+# simple script to compress blank space in 
+# Win32 Disk Image backups
+# ./shrinkme
 
 IMG="$1"
 
