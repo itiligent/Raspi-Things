@@ -17,6 +17,12 @@ sudo apt update
 sudo apt install zram-config linux-modules-extra-raspi -y
 sudo apt upgrade -y
 
+#Need to test
+#pi-bluetooth
+#libraspberrypi-bin
+#raspi-config
+#libws2811-dev
+
 sleep 3
 echo 
 echo -e "${YELLOW}Disabling a few defaults to speed things up...${NC}"
