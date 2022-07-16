@@ -420,4 +420,3 @@ aftersize=$(ls -lh "$img" | cut -d ' ' -f 5)
 logVariables $LINENO aftersize
 
 info "Shrunk $img from $beforesize to $aftersize"
-
