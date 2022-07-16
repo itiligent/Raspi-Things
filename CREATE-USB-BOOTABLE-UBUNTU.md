@@ -45,8 +45,16 @@
         
 8. Power off the RASPI and remove the MMC card. 
 
-10. Ensuring that the USB SSD is still connnected to a USB2 port, then power up the Raspi
+10. Ensuring that the USB SSD is still connnected to a USB2 port, then power up the Raspi. Ubuntu should boot up.
 
+11. run lsusb and note the command output 
 
+         Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+         Bus 001 Device 002: ID ** 2109:3431 ** your ssd adapter, usb Inc
+         Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+13.   Note the output highlighted above. It shold be an numeric formtatted nnnn:nnnn. 
+      
+      usb-storage.quirks=????:????:uCopy this output into a text editor and compse the following usb-storage.quirks=????:????:u' /boot/cmdline.txt
         
         
