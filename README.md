@@ -1,6 +1,6 @@
 ## RASBIAN CONFIG SCRIPTS
 
-MMC LONGEVITY RASPIAN. 
+MMC LONGEVITY RASPIAN 
  
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/mmc-optimisation-raspian.sh -O mmc-optimisation-raspian.sh && chmod +x mmc-optimisation-raspian.sh && sudo ./mmc-optimisation-raspian.sh
 
