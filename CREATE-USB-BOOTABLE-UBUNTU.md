@@ -49,7 +49,7 @@
         wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/create-usb-bootable-ubuntu.sh -O create-usb-bootable-ubuntu.sh && chmod +x create-usb-bootable-ubuntu.sh && sudo ./create-usb-bootable-ubuntu.sh
 
 
-8. Power off the RASPI and remove the MMC card. 
+8. Shutdown or Power off the RASPI and remove the MMC card.  
 
 
 9. Optional Step - Create a golden master image of th converted USB SSD Image
