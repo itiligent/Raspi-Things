@@ -1,7 +1,7 @@
 #!/bin/bash
 # simple script to compress blank space in 
 # Win32 Disk Image backups of raspi Ubuntu. 
-# ./shrink-easy
+# ./shrink-easy.sh
 
 IMG="$1"
 
