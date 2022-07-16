@@ -54,7 +54,8 @@
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 13.   Note the output highlighted above. It shold be an numeric formtatted nnnn:nnnn. 
+      change the below command nnnn:nnnn to reflect your specific USB device ID
       
-      usb-storage.quirks=????:????:uCopy this output into a text editor and compse the following usb-storage.quirks=????:????:u' /boot/cmdline.txt
+            sudo sed -i '1 i/a usb-storage.quirks=nnnn:nnnn:u/a' /boot/firmware/cmdline.txt
         
         
