@@ -46,7 +46,7 @@
 
 7. Now run this script:
 
-        wget https://github.com/itiligent/Raspi-Things/blob/main/create-usb-bootable-ubuntu.sh -O create-usb-bootable-ubuntu.sh && chmod +x create-usb-bootable-ubuntu.sh && sudo ./create-usb-bootable-ubuntu.sh
+        wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/create-usb-bootable-ubuntu.sh -O create-usb-bootable-ubuntu.sh && chmod +x create-usb-bootable-ubuntu.sh && sudo ./create-usb-bootable-ubuntu.sh
 
 
 8. Power off the RASPI and remove the MMC card. 
