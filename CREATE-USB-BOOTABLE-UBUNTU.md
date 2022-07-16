@@ -5,9 +5,12 @@
   
 1. Image your SSD with a Ubuntu image using your preferred imaging tool. (**IMAGE MUST HAVE NEVER BEEN PREVIOUSY BOOTED**) 
 
+
 2. Boot your Raspi via an MMC card running Raspian 
 
+
 3. plug the SSD into a **USB2** port
+
 
 4. lsblk
 
@@ -29,6 +32,7 @@
         sudo mount /dev/sda1 /mnt/boot
         sudo mount /dev/sda2 /mnt/writable
 
+
 6. lsblk once again to confirm /mnt/boot and /mnt/writable refer to the correct sda
         
         NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
@@ -39,24 +43,32 @@
         ├─mmcblk0p1 179:1    0   256M  0 part /boot
         └─mmcblk0p2 179:2    0  59.2G  0 part /
 
+
 7. Now run this script:
 
         wget https://github.com/itiligent/Raspi-Things/blob/main/create-usb-bootable-ubuntu.sh -O create-usb-bootable-ubuntu.sh && chmod +x create-usb-bootable-ubuntu.sh && sudo ./create-usb-bootable-ubuntu.sh
-        
+
+
 8. Power off the RASPI and remove the MMC card. 
 
-10. Ensuring that the USB SSD is still connnected to a USB2 port, then power up the Raspi. Ubuntu should boot up.
 
-11. run lsusb and note the command output 
+10. Ensuring that the USB SSD is still connnected to a USB2 port, power up the Raspi. Ubuntu should boot up.
+
+
+11. Run lsusb and note the command output 
 
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 002: ID ** 2109:3431 ** your ssd adapter, usb Inc
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-13.   Note the output highlighted with ** above. Your USB device has an numeric ID formtatted as nnnn:nnnn. 
+13.   Note the output highlighted between **   ** above. Your USB device has an numeric ID formtatted as nnnn:nnnn. 
       Change the nnnn:nnnn section of the below command to reflect YOUR 8 digit USB device ID. 
       
             sudo sed -i '1s/^/usb-storage.quirks=nnnn:nnnn:u /'  /boot/firmware/cmdline.txt
+            
+14. Shutdown the pi: 
+
+          shutdown -h now
 
         
-        
+15. Connect ths SSD to your USB3 port and power up the Raspberry Pi once more. Ubuntu will boot with full USB 3.0 speed.
