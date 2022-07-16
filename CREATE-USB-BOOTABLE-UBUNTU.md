@@ -64,6 +64,12 @@
          wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/shrink-ubuntu.sh -O shrink-ubuntu.sh && chmod +x shrink-ubuntu.sh
          sudo ./shrink-ubuntu.sh IMAGENAME
 
+
+10. Some models of generic USB to SATA adapters can have issues. If your SSD will boot from a USB2 port, but not a USB3 port, continue wth the steps below. 
+   (be patient with USB3 booting, the Raspi bootloader can take up to 2 mins to cycle through all possible modes in ome cases.)  
+
+
+
 10. Reconnect the USB SSD to a USB2 port and power up the Raspi. Ubuntu should now boot up.
 
 
@@ -84,4 +90,4 @@
           shutdown -h now
 
         
-14. Connect ths SSD to your USB3 port and power up the Raspberry Pi once more. Ubuntu will now boot with full USB 3.0 speed.
+14. Connect ths SSD to your USB3 port and power up the Raspberry Pi once more. Ubuntu will now boot with full USB 3.0 speed. Again, be patient.
