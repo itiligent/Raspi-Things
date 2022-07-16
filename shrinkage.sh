@@ -1,6 +1,7 @@
 #!/bin/bash
 
 version="v0.1.2"
+
 CURRENT_DIR="$(pwd)"
 SCRIPTNAME="${0##*/}"
 MYNAME="${SCRIPTNAME%.*}"
