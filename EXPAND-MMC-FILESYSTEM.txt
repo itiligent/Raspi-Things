@@ -1,5 +1,5 @@
 
-Expand a newly imaged Raspi filesystem to use all available disk or memory card space.
+Ho to expand a newly imaged Raspi filesystem to use all available disk or memory card space.
 
 Ubuntu: 
 clear && sudo fdisk /dev/mmcblk0 
