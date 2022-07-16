@@ -97,7 +97,7 @@ network:
 #            gateway4: 172.17.18.1
 #            nameservers:
 #              addresses: [172.17.18.1,172.17.18.2]
-#Configure STATIC ETH0 Plus secondary USB LTE
+#Configure STATIC ETH0 Plus a secondary USB adaptor or LTE modem, set metric priority
 #network:
 #    version: 2
 #    ethernets:
