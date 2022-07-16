@@ -126,14 +126,12 @@ echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packa
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 sudo apt update 
 # Lets also install a few small extras so it feels like Raspian 
-sudo apt install net-tools -y
 sudo apt install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
 SIZE=192M
 MAIL=true
-PATH_DISK="/var/log";"/opt/gvm/var/log"
-#PATH_DISK="/var/log"
+PATH_DISK="/var/log"
 ZL2R=false
 COMP_ALG=lz4
 LOG_DISK_SIZE=300M
