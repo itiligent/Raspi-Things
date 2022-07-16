@@ -53,9 +53,10 @@
          Bus 001 Device 002: ID ** 2109:3431 ** your ssd adapter, usb Inc
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-13.   Note the output highlighted above. It shold be an numeric formtatted nnnn:nnnn. 
-      change the below command nnnn:nnnn to reflect your specific USB device ID
+13.   Note the output highlighted with ** above. Your USB device has an numeric ID formtatted as nnnn:nnnn. 
+      Change the nnnn:nnnn section of the below command to reflect YOUR 8 digit USB device ID. 
       
-            sudo sed -i '1 i/a usb-storage.quirks=nnnn:nnnn:u/a' /boot/firmware/cmdline.txt
+            sudo sed -i '1s/^/usb-storage.quirks=nnnn:nnnn:u /'  /boot/firmware/cmdline.txt
+
         
         
