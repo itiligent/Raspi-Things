@@ -31,7 +31,7 @@ USB HDD UBUNTU 22.4 (Requires decompressed kernel image - see create-usb-bootabl
 
 
     
-USB HDD UBUNTU 20.04.4 (Requires decompressed kernel image - see create-usb-bootable-ubuntu.shh)
+USB HDD UBUNTU 20.04.4 (Requires decompressed kernel image - see create-usb-bootable-ubuntu.sh)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-ubuntu-20.04.sh -O general-optimisation-ubuntu-20.04.sh && chmod +x general-optimisation-ubuntu-20.04.sh && sudo ./general-optimisation-ubuntu-20.04.sh
 
