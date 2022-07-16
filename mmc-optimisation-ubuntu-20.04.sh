@@ -3,7 +3,7 @@
 # Build Ubuntu optimised for MMC cards - Extend MMC life on Raspi
 # For Ubuntu 20.04.4 
 # David Harrop 
-# June 2022
+# July 2022
 ###################################################################################
 
 clear
