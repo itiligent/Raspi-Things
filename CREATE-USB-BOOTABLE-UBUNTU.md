@@ -1,8 +1,7 @@
    ## Create a USB bootable Ubuntu Raspberry Pi Image: ##
   
   
-  
-  
+    
 1. Image your SSD with a Ubuntu image from RaspberryPi.com. Use the SMALLEST SSD you have available. (**IMAGE MUST HAVE NEVER BEEN PREVIOUSY BOOTED**) 
 
    https://downloads.raspberrypi.org/imager/imager_latest.exe
