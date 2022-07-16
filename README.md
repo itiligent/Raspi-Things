@@ -35,8 +35,3 @@ USB HDD UBUNTU 20.04.4 (Requires decompressed kernel image - see create-usb-boot
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-ubuntu-20.04.sh -O general-optimisation-ubuntu-20.04.sh && chmod +x general-optimisation-ubuntu-20.04.sh && sudo ./general-optimisation-ubuntu-20.04.sh
 
-
-sudo curl https://raw.githubusercontent.com/TheRemote/Ubuntu-Server-raspi4-unofficial/master/create-usb-bootable-ubuntu.sh | sudo bash
-
-
-
