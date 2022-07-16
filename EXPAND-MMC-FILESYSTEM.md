@@ -1,5 +1,5 @@
 
-How to expand a newly imaged Raspi filesystem to use all available disk or memory card space.
+How to expand a newly imaged or (restored image) Ubuntu Raspi to use all available disk/memory card space.
 
    ##Ubuntu:
    
