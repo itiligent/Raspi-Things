@@ -25,7 +25,7 @@ MMC LONGEVITY UBUNTU 20.04.4.
     
 
 
-USB HDD UBUNTU 22.4 (Requires decompressed kernel image - see create-usb-bootable-ubuntu.sh)
+USB HDD UBUNTU 22.04 (22.04 natively supports USB boot)
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-ubuntu-22.04.sh -O general-optimisation-ubuntu-22.04.sh && chmod +x general-optimisation-ubuntu-22.04.sh && sudo ./general-optimisation-ubuntu-22.04.sh
 
