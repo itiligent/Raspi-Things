@@ -51,8 +51,13 @@
 
 8. Power off the RASPI and remove the MMC card. 
 
-9. Optional Step - Create a golden master image of the converted SSD. Backup the SSD with Win32Disk Imager then shrink the image in a linux OS with  
 
+9. Optional Step - Create a golden master image of th converted USB SSD Image. 
+            a. Connect the usd SSD to wondows and backup the drive with Win32Disk Imager, then copy this backup image to a linux OS. (This backup will be a file the               same size as the SSD, so for this reason it is advisable to create gold images on the smallest SSD possible.)
+            b. From linux, download and run the shrink-ubuntu.sh script to compress all the unused space in the image. This will take the image down to only the actual             data size
+   
+         wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/shrink-ubuntu.sh
+         sudo ./shrink-ubuntu.sh IMAGENAME
 
 10. Ensuring that the USB SSD is still connnected to a USB2 port, power up the Raspi. Ubuntu should boot up.
 
