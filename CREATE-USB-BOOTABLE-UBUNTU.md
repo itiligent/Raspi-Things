@@ -1,4 +1,4 @@
-   ## Create a USB bootable Ubuntu Raspi Image: ##
+   ## Create a USB bootable Ubuntu Raspberry Pi Image: ##
   
   
   
@@ -6,10 +6,10 @@
 1. Image your SSD with a Ubuntu image using your preferred imaging tool. (**IMAGE MUST HAVE NEVER BEEN PREVIOUSY BOOTED**) 
 
 
-2. Boot your Raspi via an MMC card running Raspian 
+2. Boot your Raspberry Pi via an MMC card running Raspian 
 
 
-3. plug the SSD into a **USB2** port
+3. Important: plug the SSD into a **USB2.0** port. 
 
 
 4. lsblk
@@ -25,7 +25,7 @@
         └─mmcblk0p2 179:2    0  59.2G  0 part /
 
 
-5. Adjust the below commands according to the lsblk output (sda1 and sda2 partition format may be different)
+5. Adjust the below commands according to the lsblk output (your sda1 and sda2 partition names may be different)
 
         sudo mkdir /mnt/boot
         sudo mkdir /mnt/writable
@@ -33,7 +33,7 @@
         sudo mount /dev/sda2 /mnt/writable
 
 
-6. lsblk once again to confirm /mnt/boot and /mnt/writable refer to the correct sda
+6. lsblk once again to confirm /mnt/boot and /mnt/writable refer to the correct sda partitions
         
         NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
         sda           8:0    0 119.2G  0 disk 
@@ -71,4 +71,4 @@
           shutdown -h now
 
         
-15. Connect ths SSD to your USB3 port and power up the Raspberry Pi once more. Ubuntu will boot with full USB 3.0 speed.
+15. Connect ths SSD to your USB3 port and power up the Raspberry Pi once more. Ubuntu will now boot with full USB 3.0 speed.
