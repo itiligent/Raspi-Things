@@ -26,3 +26,9 @@ case "$1" in
   esac
 
 exit 0
+
+# Installation Intructions:
+# sudo mv listen-for-shutdown.sh /etc/init.d/
+# sudo chmod +x /etc/init.d/listen-for-shutdown.sh
+# sudo update-rc.d listen-for-shutdown.sh defaults
+# sudo /etc/init.d/listen-for-shutdown.sh start
