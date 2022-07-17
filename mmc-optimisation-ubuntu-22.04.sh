@@ -13,10 +13,10 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
-sudo DEBIAN_FRONTEND=noninteractive apt upgrade -y
-sudo apt update
-sudo apt install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
-sudo apt upgrade -y
+sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
+sudo apt-get update
+sudo apt-get install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
+sudo apt-get upgrade -y
 
 sleep 3
 echo 
@@ -158,7 +158,7 @@ mkswap /dev/zram0
 swapon -p 5 /dev/zram0
 
 EOF
-apt autoremove -y
+apt-get autoremove -y
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram and ZRAM changes to take effect. 
