@@ -27,7 +27,7 @@ else
 
 sed -i  '$ a enable_uart=1' /boot/firmware/config.txt
 sudo apt-get update
-sudo apt-get install python3-rpi.gpio
+sudo apt-get install python3-rpi.gpio -y
 sudo ln -s /usr/bin/python3 /usr/bin/python
 mv listen-for-shutdown.py /usr/local/bin/
 mv listen-for-shutdown.sh /etc/init.d/
