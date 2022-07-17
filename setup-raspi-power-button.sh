@@ -22,3 +22,4 @@ sed -i s/$/' enable_uart=1'/ /boot/cmdline.txt
 else
 sed -i s/$/' enable_uart=1'/ /boot/firmware/cmdline.txt
 fi
+
