@@ -13,9 +13,9 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
-sudo apt update
-sudo apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth zram-config -y
-sudo apt upgrade -y
+sudo apt-get update
+sudo apt-get install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth zram-config -y
+sudo apt-get upgrade -y
 
 sleep 3
 echo 
@@ -124,9 +124,9 @@ echo
 # Install Log2Ram so we can put all out log files into a ramdisk and dump them with one write once per day.
 echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian/ bullseye main" | sudo tee /etc/apt/sources.list.d/azlux.list
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
-sudo apt update 
+sudo apt-get update 
 # Lets also install a few small extras so it feels like Raspian 
-sudo apt install log2ram -y
+sudo apt-get install log2ram -y
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
 SIZE=192M
@@ -169,7 +169,7 @@ for i in $(seq ${NRDEVICES}); do
 done
 EOF
 
-apt autoremove -y
+apt-get autoremove -y
 
 printf "${GREEN}+---------------------------------------------------------------------------------------------------------------------------
 + You will need to reboot for Log2Ram and ZRAM changes to take effect. 
