@@ -28,3 +28,4 @@ else
 sed -i s/$/' enable_uart=1'/ /boot/firmware/cmdline.txt
 fi
 
+rm setup-raspi-power-button.sh
