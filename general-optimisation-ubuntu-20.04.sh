@@ -12,9 +12,9 @@ YELLOW='\033[1;33m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
-sudo apt update
-sudo apt install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth -y
-sudo apt upgrade -y
+sudo apt-get update
+sudo apt-get install linux-raspi linux-tools-raspi libraspberrypi-bin pi-bluetooth -y
+sudo apt-get upgrade -y
 
 sleep 3
 echo 
@@ -117,7 +117,7 @@ EOF
 sudo netplan generate
 sudo netplan apply
 
-apt autoremove -y
+apt-get autoremove -y
 		
 printf "${YELLOW}+---------------------------------------------------------------------------------------------------------------------------
 + Done 
