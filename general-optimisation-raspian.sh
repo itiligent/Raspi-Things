@@ -11,8 +11,8 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 ############################ Univerasl fixes: ##########################################
-sudo apt update
-sudo apt upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y
 
 sleep 2
 echo 
@@ -78,12 +78,4 @@ PollIntervalMinSec=32
 PollIntervalMaxSec=2048
 EOF
 
-apt autoremove -y
-
-
-
-
-
-
-
-
+apt-get autoremove -y
