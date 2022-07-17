@@ -35,3 +35,6 @@ USB HDD UBUNTU 20.04.4 (Requires decompressed kernel image - see create-usb-boot
 
     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/general-optimisation-ubuntu-20.04.sh -O general-optimisation-ubuntu-20.04.sh && chmod +x general-optimisation-ubuntu-20.04.sh && sudo ./general-optimisation-ubuntu-20.04.sh
 
+
+setup-raspi-power-button.sh
+
