@@ -22,10 +22,18 @@ update-rc.d listen-for-shutdown.sh defaults
 
 # Enable serial gpio for Led power - Are we installing to Raspbian or Ubuntu?
 source /etc/os-release
-if [[ $ID = "debian" ]] || [[ $ID = "buster" ]]; then
+if [[ $ID = "debian" ]] || [[ $ID = "some other" ]]; then
+
 sed -i  '$ a enable_uart=1' /boot/config.txt
+
 else
+
 sed -i  '$ a enable_uart=1' /boot/firmware/config.txt
+sudo apt update
+sudo apt-get install python3-rpi.gpio
+sudo ln -s /usr/bin/python3 /usr/bin/python
+
 fi
 
+#cleanup
 rm setup-raspi-power-button.sh
