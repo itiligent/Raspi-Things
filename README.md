@@ -38,5 +38,5 @@ USB HDD UBUNTU 20.04.4 (Requires decompressed kernel image - see create-usb-boot
 
 ## Enable Raspi Physcial Shutdown Button & Power LED
 
-     wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/setup-raspi-power-button.sh -O setup-raspi-power-button.sh && chmod +x setup-raspi-power-button.sh && sudo ./setup-raspi-power-button.sh
+    wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/setup-raspi-power-button.sh -O setup-raspi-power-button.sh && chmod +x setup-raspi-power-button.sh && sudo ./setup-raspi-power-button.sh
 
