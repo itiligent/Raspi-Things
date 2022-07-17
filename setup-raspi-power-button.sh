@@ -21,11 +21,13 @@ update-rc.d listen-for-shutdown.sh defaults
 /etc/init.d/listen-for-shutdown.sh start
 
 # Enable serial gpio for Led power - Are we installing to Raspbian or Ubuntu?
-source /etc/os-release
-if [[ $ID = "debian" ]] || [[ $ID = "buster" ]]; then
-sed -i s/$/' enable_uart=1'/ /boot/cmdline.txt
-else
-sed -i s/$/' enable_uart=1'/ /boot/firmware/cmdline.txt
-fi
+# Raspi 4 only?
+#source /etc/os-release
+#if [[ $ID = "debian" ]] || [[ $ID = "buster" ]]; then
+#sed -i s/$/' enable_uart=1'/ /boot/cmdline.txt
+#else
+#sed -i s/$/' enable_uart=1'/ /boot/firmware/cmdline.txt
+#fi
 
 rm setup-raspi-power-button.sh
+
