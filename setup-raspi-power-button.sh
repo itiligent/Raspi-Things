@@ -17,7 +17,7 @@ update-rc.d listen-for-shutdown.sh defaults
 
 # Enable serial gpio for Led power - Are we installing to Raspbian or Ubuntu?
 source /etc/os-release
-if [[ $PRETTY_NAME = "bullseye" ]] || [[ $PRETTY_NAME = "buster" ]]; then
+if [[ $ID = "debian" ]] || [[ $ID = "buster" ]]; then
 sed -i s/$/' enable_uart=1'/ /boot/cmdline.txt
 else
 sed -i s/$/' enable_uart=1'/ /boot/firmware/cmdline.txt
