@@ -20,5 +20,5 @@ subprocess.call(['shutdown', '-h', 'now'], shell=False)
 # 2-5v led
 # Connect led + to TXD Pin8
 # Connect led - to GND Pin6
-#
-
+# Enable serial gpio for ped power
+# sed -i s/$/' enable_uart=1'/ /boot/cmdline.txt
