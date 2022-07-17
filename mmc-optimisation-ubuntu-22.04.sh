@@ -13,7 +13,6 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
-sudo DEBIAN_FRONTEND=noninteractive apt-get upgrade -y
 sudo apt-get update
 sudo apt-get install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
 sudo apt-get upgrade -y
