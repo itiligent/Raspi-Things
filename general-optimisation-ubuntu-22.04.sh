@@ -12,9 +12,13 @@ YELLOW='\033[1;33m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
-sudo apt update
-sudo apt install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
-sudo apt upgrade -y
+
+NEEDRESTART_MODE=a
+export NEEDRESTART_MODE=a
+
+sudo apt-get update
+DEBIAN_FRONTEND=noninteractive apt install linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
+DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
 
 sleep 3
 echo 
