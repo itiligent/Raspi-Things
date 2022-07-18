@@ -13,6 +13,9 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
+sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
+sudo needrestart -r a
+
 sudo apt update
 sudo apt install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
 sudo apt upgrade -y
