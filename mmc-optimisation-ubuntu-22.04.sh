@@ -13,18 +13,13 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 NC='\033[0m' # No Color
 
+#Stop annoyong popups relating to service restarts and reboots (breaks the script running)
 sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
 sudo needrestart -r a
-<<<<<<< HEAD
 
-sudo apt update
-sudo apt install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
-sudo apt upgrade -y
-=======
 sudo apt-get update
 sudo apt-get install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
 sudo apt-get upgrade -y
->>>>>>> 174c0dd3e2ae263fbd72952a24dac2b6f5518c4d
 
 sleep 3
 echo 
