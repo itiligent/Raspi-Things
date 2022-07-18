@@ -16,17 +16,12 @@ NC='\033[0m' # No Color
 #Stop annoyong popups relating to service restarts and reboots (breaks the script running)
 sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
 
-#NEEDRESTART_MODE=a
-#export NEEDRESTART_MODE=a
+NEEDRESTART_MODE=a
+export NEEDRESTART_MODE=a
 
 sudo apt-get update
-DEBIAN_FRONTEND=noninteractive apt install zram-config
+DEBIAN_FRONTEND=noninteractive apt install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
 DEBIAN_FRONTEND=noninteractive apt-get -y upgrade
-
-
-#sudo apt-get update
-#sudo apt-get install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
-#sudo apt-get upgrade -y
 
 sleep 3
 echo 
@@ -137,7 +132,7 @@ echo "deb [signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packa
 sudo wget -O /usr/share/keyrings/azlux-archive-keyring.gpg  https://azlux.fr/repo.gpg
 
 sudo apt-get update 
-sudo apt-get install log2ram -y
+DEBIAN_FRONTEND=noninteractive apt install log2ram
 cp /etc/log2ram.conf /etc/log2ram.conf.bak
 sudo cat <<EOF | sudo tee /etc/log2ram.conf >/dev/null
 SIZE=192M
