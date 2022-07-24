@@ -14,10 +14,9 @@ RED='\033[1;31m'
 NC='\033[0m' # No Color
 
 #Stop annoyong popups relating to service restarts and reboots (breaks the script running)
-sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
-
-NEEDRESTART_MODE=a
-export NEEDRESTART_MODE=a
+#sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
+#NEEDRESTART_MODE=a
+#export NEEDRESTART_MODE=a
 
 sudo apt-get update
 DEBIAN_FRONTEND=noninteractive apt install zram-config linux-modules-extra-raspi raspi-config libraspberrypi-bin -y
