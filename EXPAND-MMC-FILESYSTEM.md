@@ -17,5 +17,4 @@ How to expand a newly imaged or (restored image) Ubuntu Raspi to use all availab
       expand filesystem
       ok
       finish
-      yes (to reboot)
-  
+      yes (to reboot)  
