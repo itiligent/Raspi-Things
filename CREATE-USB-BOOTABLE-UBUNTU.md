@@ -47,10 +47,10 @@
         wget https://raw.githubusercontent.com/itiligent/Raspi-Things/main/create-usb-bootable-ubuntu.sh -O create-usb-bootable-ubuntu.sh && chmod +x create-usb-bootable-ubuntu.sh && sudo ./create-usb-bootable-ubuntu.sh
 
 
-8. Shutdown or power off the RASPI and remove the MMC card.  DO NOT REBOOT.
+8. Shutdown or power off the RASPI and remove the MMC card.  DO NOT REBOOT YET.
 
 
-9. OPTIONAL STEP - BEFORE BOOTING FOR THE FIRST TIME - CREATE A GOLDEN MASTER USB BOOT IMAGE
+9. OPTIONAL STEP - BEFORE BOOTING FOR THE FIRST TIME CREATE A GOLDEN MASTER USB BOOT IMAGE (else goto step 10)
 
    a. Connect the USB SSD to Windows and make a block image backup with Win32Disk Imager https://sourceforge.net/projects/win32diskimager/
 
@@ -65,7 +65,7 @@
          sudo ./shrink-ubuntu.sh IMAGENAME
 
 
-10. Some models of generic USB to SATA adapters can have issues. If your SSD will boot from a USB2 port, but not a USB3 port, continue wth the steps below. 
+10. Some models of generic USB to SATA adapters can have issues. If your SSD sucessssfully boota from a USB2 port, but not a USB3 port, continue wth the steps below. 
    (be patient with USB3 booting, the Raspi bootloader can take up to 2 mins to cycle through all possible modes in ome cases.)  
 
 
